@@ -4,7 +4,7 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-avail-rust = { git = "https://github.com/availproject/avail" }
+avail-rust = { git = "https://github.com/availproject/avail", tag ="v2.2.5.1" }
 serde = "1.0.216"
 serde_json = "1.0.133"
 tokio = { version = "1.42.0", features = ["full"] }

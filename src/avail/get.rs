@@ -1,4 +1,5 @@
 use avail_rust::{avail, SDK};
+use avail_rust::H256;
 use core::str::FromStr;
 use std::error::Error;
 use avail::data_availability::calls::types as DataAvailabilityCalls;
@@ -15,10 +16,10 @@ pub async fn get(tx_hash: &str, block_hash: &str) -> Result<(Batch), Box<dyn Err
         .await
         .map_err(|e| format!("Failed to initialize SDK: {}", e))?;
 
-    let block_hash = sp_core::H256::from_str(block_hash)
+    let block_hash = H256::from_str(block_hash)
         .map_err(|e| format!("Invalid block hash format: {}", e))?;
 
-    let tx_hash = sp_core::H256::from_str(tx_hash)
+    let tx_hash = H256::from_str(tx_hash)
         .map_err(|e| format!("Invalid tx hash format: {}", e))?;
 
     let tx = sdk
